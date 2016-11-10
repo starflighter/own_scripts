@@ -5,7 +5,7 @@
 #iptables -A INPUT -m mac --mac-source 00:01:02:03:04:05  -j DROP
 #
 
-#MAC Handy Nicole: 7c:91:22:cd:f0:6f
+
 
 typeset -i zaehler
 declare -a macs
@@ -16,12 +16,12 @@ aktuelle_ip_tables="/etc/iptables/iptables_ssh"
 neue_ip_tables="/etc/iptables/iptables_ssh_mac_sperre"
 neue_ip_tables1_="/root/temp/bla"
 
-mac_nicole="7c:91:22:cd:f0:6f"
+mac_default="Hier MAC eintragen"
 
 if [ $# -eq 0 ]
   then
-    echo "Usage: $0 'MAC' ('MAC' 'MAC' ...), ansonsten wird Nicole's Handy genommen"
-    macs[$zaehler]=$mac_nicole
+    echo "Usage: $0 'MAC' ('MAC' 'MAC' ...), ansonsten wird mac_default genommen"
+    macs[$zaehler]=$mac_default
 fi
 
 
@@ -32,7 +32,7 @@ while [ $# -gt 0 ];do
 		#weitermachen
 		zaehler+=1
 	else
-		echo "'$1' ist keine gueltige IP"
+		echo "'$1' ist keine gueltige MAC"
                 exit 1
 	fi
 	shift
