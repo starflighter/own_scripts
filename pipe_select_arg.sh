@@ -23,4 +23,4 @@ event=`echo $input | awk '{print $5}'`
 query="INSERT INTO logging (timestamp,ip_addr,port,ereignis) VALUES ('$timestamp', '$ip_source', '$dest_port', '$event');"
 
 #echo $query
-echo $query | mysql -u root -proot iptables -h localhost
+echo $query | mysql -u <user> -p<pass> iptables -h localhost
