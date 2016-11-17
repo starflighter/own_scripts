@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -9,6 +10,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
+
+## nagios/icinga/icinga2-plugin from an unknown author, that summarized the whole size of a path
 
 USAGE="Usage $0 -f dir [-s (k|m|g)] [-w (size)] [-c (size)]"
 

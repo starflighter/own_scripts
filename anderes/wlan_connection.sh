@@ -16,7 +16,7 @@
 #!/bin/bash
 
 # WLAN interface name
-INTERFACE=eth0
+INTERFACE=wlan0
 
 # Lock file
 LOCKFILE=/var/tmp/wlan_connection.lock

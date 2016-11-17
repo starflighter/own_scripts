@@ -6,6 +6,9 @@
 # Author: Kowen Houston                                                        #
 # Version                                                                      #
 ################################################################################
+
+##shows the installed and used (current) kernel
+
 installed_version=`ls /lib/modules/ -Art | tail -n 1`
 running_version=`uname -r`
         echo "OK - running kernel = $running_version, installed kernel = $installed_version"
