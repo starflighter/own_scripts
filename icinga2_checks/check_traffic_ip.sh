@@ -16,7 +16,8 @@
 ## along with this program; if not, write to the Free Software
 ## Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-## nagios/icinga/icinga2-plugin that shows the traffic that a single ip needs (with performance data)
+## nagios/icinga/icinga2-plugin that shows the traffic that a single ip needs in 24h (daily logrotate of access.log)
+## with performance-data
 
 typeset -i anzahl 
 typeset -i zaehler
